@@ -1,0 +1,109 @@
+{
+  "name": "RESTool sample app",
+  "errorMessageDataPath": "error",
+  "baseUrl":"http://127.0.0.1:3000",
+  "pages": [
+    {
+      "default": true,
+      "name": "Contatos",
+      "id": "contatos",
+      "description": "An example of RESTool configuration file usage with a simple mocking server",
+      "methods": {
+        "getAll": {
+          "label": "Get Contacts",
+          "url": "/contatos",
+          "dataPath": null,
+          "queryParams": [
+            {
+              "name": "q",
+              "value": "",
+              "label": "Query"
+            }
+          ],
+          "display": {
+            "type": "table",
+            "fields": [
+              {
+                "name": "nome",
+                "type": "text",
+                "label": "Nome",
+                "filterable": true
+              },
+              {
+                "name": "email",
+                "type": "email",
+                "label": "E-mail",
+                "filterable": true
+              },
+              {
+                "name": "telefone",
+                "type": "text",
+                "label": "Telefone",
+                "filterable": true
+              }
+            ],
+            "sortBy": ["nome"]
+          }
+        },
+        "getSingle": {
+          "url": "/contatos/:_id",
+          "dataPath": null,
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/contatos",
+          "actualMethod": null,
+          "fields": [
+            {
+              "name": "_id",
+              "label": "id",
+              "type": "text"
+            },
+            {
+              "name": "nome",
+              "label": "Nome",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "email",
+              "label": "E-mail",
+              "type": "email"
+            },
+            {
+              "name": "telefone",
+              "label": "Telefone",
+              "type": "text"
+            }
+          ]
+        },
+        "post": {
+          "url": "/contatos",
+          "fields": [
+            {
+              "name": "nome",
+              "label": "Nome",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "email",
+              "label": "E-mail",
+              "type": "email"
+            },
+            {
+              "name": "telefone",
+              "label": "Telefone",
+              "type": "text"
+            }
+          ]
+        },
+        "delete": {
+          "url": "/contatos/:_id"
+        }
+      }
+    }
+  ]
+}
+
